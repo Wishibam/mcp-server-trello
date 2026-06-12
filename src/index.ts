@@ -69,6 +69,7 @@ class TrelloServer {
       'get_cards_by_list_id',
       {
         title: 'Get Cards by List ID',
+        annotations: { readOnlyHint: true },
         description:
           'Fetch cards from a specific Trello list on a specific board. Descriptions are previewed by default to keep responses compact; set fields without "desc" to omit descriptions, or increase descMaxLength/omitDescThresholdBytes and use get_card for full details.',
         inputSchema: {
@@ -120,6 +121,7 @@ class TrelloServer {
       'get_lists',
       {
         title: 'Get Lists',
+        annotations: { readOnlyHint: true },
         description: 'Retrieve all lists from the specified board',
         inputSchema: {
           boardId: z
@@ -145,6 +147,7 @@ class TrelloServer {
       'get_recent_activity',
       {
         title: 'Get Recent Activity',
+        annotations: { readOnlyHint: true },
         description: 'Fetch recent activity on the Trello board',
         inputSchema: {
           boardId: z
@@ -479,6 +482,7 @@ class TrelloServer {
       'get_my_cards',
       {
         title: 'Get My Cards',
+        annotations: { readOnlyHint: true },
         description: 'Fetch all cards assigned to the current user',
         inputSchema: {},
       },
@@ -689,6 +693,7 @@ class TrelloServer {
       'list_boards',
       {
         title: 'List Boards',
+        annotations: { readOnlyHint: true },
         description: 'List all boards the user has access to',
         inputSchema: {},
       },
@@ -736,6 +741,7 @@ class TrelloServer {
       'list_workspaces',
       {
         title: 'List Workspaces',
+        annotations: { readOnlyHint: true },
         description:
           'List workspaces the user has access to. If TRELLO_ALLOWED_WORKSPACES is configured, only allowed workspaces are returned.',
         inputSchema: {},
@@ -828,6 +834,7 @@ class TrelloServer {
       'list_boards_in_workspace',
       {
         title: 'List Boards in Workspace',
+        annotations: { readOnlyHint: true },
         description: 'List all boards in a specific workspace',
         inputSchema: {
           workspaceId: z.string().describe('ID of the workspace to list boards from'),
@@ -850,6 +857,7 @@ class TrelloServer {
       'get_active_board_info',
       {
         title: 'Get Active Board Info',
+        annotations: { readOnlyHint: true },
         description: 'Get information about the currently active board',
         inputSchema: {},
       },
@@ -890,6 +898,7 @@ class TrelloServer {
       'get_card',
       {
         title: 'Get Card',
+        annotations: { readOnlyHint: true },
         description: 'Get detailed information about a specific Trello card',
         inputSchema: {
           cardId: z.string().describe('ID of the card to fetch'),
@@ -985,6 +994,7 @@ class TrelloServer {
       'get_card_comments',
       {
         title: 'Get Card Comments',
+        annotations: { readOnlyHint: true },
         description: 'Retrieve all comments from a specific Trello card',
         inputSchema: {
           cardId: z.string().describe('ID of the card to get comments from'),
@@ -1035,6 +1045,7 @@ class TrelloServer {
       'get_checklist_items',
       {
         title: 'Get Checklist Items',
+        annotations: { readOnlyHint: true },
         description: 'Get all items from a checklist by name',
         inputSchema: {
           name: z.string().describe('Name of the checklist to retrieve items from'),
@@ -1094,6 +1105,7 @@ class TrelloServer {
       'find_checklist_items_by_description',
       {
         title: 'Find Checklist Items by Description',
+        annotations: { readOnlyHint: true },
         description: 'Search for checklist items containing specific text in their description',
         inputSchema: {
           description: z.string().describe('Text to search for in checklist item descriptions'),
@@ -1127,6 +1139,7 @@ class TrelloServer {
       'get_acceptance_criteria',
       {
         title: 'Get Acceptance Criteria',
+        annotations: { readOnlyHint: true },
         description: 'Get all items from the "Acceptance Criteria" checklist',
         inputSchema: {
           cardId: z
@@ -1155,6 +1168,7 @@ class TrelloServer {
       'get_checklist_by_name',
       {
         title: 'Get Checklist by Name',
+        annotations: { readOnlyHint: true },
         description: 'Get a complete checklist with all its items and completion percentage',
         inputSchema: {
           name: z.string().describe('Name of the checklist to retrieve'),
@@ -1266,6 +1280,7 @@ class TrelloServer {
       'get_board_members',
       {
         title: 'Get Board Members',
+        annotations: { readOnlyHint: true },
         description: 'Get all members of a specific board',
         inputSchema: {
           boardId: z
@@ -1335,6 +1350,7 @@ class TrelloServer {
       'get_board_labels',
       {
         title: 'Get Board Labels',
+        annotations: { readOnlyHint: true },
         description: 'Get all labels of a specific board',
         inputSchema: {
           boardId: z
@@ -1575,6 +1591,7 @@ class TrelloServer {
       'get_board_custom_fields',
       {
         title: 'Get Board Custom Fields',
+        annotations: { readOnlyHint: true },
         description:
           'Get all custom field definitions on a board. Returns field IDs, names, and types. ' +
           'For dropdown/list fields, also returns available options with their IDs. ' +
@@ -1677,6 +1694,7 @@ class TrelloServer {
       'get_card_history',
       {
         title: 'Get Card History',
+        annotations: { readOnlyHint: true },
         description: 'Get the history/actions of a specific card',
         inputSchema: {
           cardId: z.string().describe('ID of the card to get history for'),
